@@ -1,0 +1,11 @@
+services:
+  - name: web
+    environment_slug: php
+    github:
+      branch: main
+      repo: lynter123/lara-app
+    http_port: 8080
+    routes:
+      - path: /
+    build_command: 'composer install && php artisan migrate --force'
+    run_command: 'php artisan serve --host=0.0.0.0 --port=8080'
